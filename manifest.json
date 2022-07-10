@@ -1,0 +1,15 @@
+{
+  "name": "Youtube Searcher",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "menus.js"
+  },
+  "permissions": ["contextMenus", "storage"],
+  "icons": {
+    "16": "/get_started16.png",
+    "48": "/get_started48.png",
+    "128": "/get_started128.png"
+  }
+}
