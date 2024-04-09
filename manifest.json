@@ -6,7 +6,7 @@
   "background": {
     "service_worker": "menus.js"
   },
-  "permissions": ["contextMenus", "storage"],
+  "permissions": ["contextMenus", "storage", "tabs", "activeTab"],
   "icons": {
     "16": "/get_started16.png",
     "48": "/get_started48.png",
