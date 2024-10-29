@@ -1,32 +1,32 @@
-var contextMenuItem = {
-    "id": "iconid",
+var buttonYTSearch = {
+    "id": "buttonYTSearch",
     "title": "Search for %s on Youtube", 
     "contexts": ["all"], 
 };
-chrome.contextMenus.create(contextMenuItem);
+chrome.contextMenus.create(buttonYTSearch);
 
-var contextMenuItemTWo = {
-    "id": "iconid2",
+var buttonOpenYTMusic = {
+    "id": "buttonOpenYTMusic",
     "title": "Open this YT video as music",
     "contexts": ["all"],
 };
-chrome.contextMenus.create(contextMenuItemTWo);
+chrome.contextMenus.create(buttonOpenYTMusic);
 
-var contextMenuItemThree = {
-    "id": "iconid3",
+var buttonWikiSearch = {
+    "id": "buttonWikiSearch",
     "title": "Search for %s on Wikipedia",
     "contexts": ["all"],
 };
-chrome.contextMenus.create(contextMenuItemThree);
+chrome.contextMenus.create(buttonWikiSearch);
 
 
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-    if (info.menuItemId == "iconid") {
+    if (info.menuItemId == "buttonYTSearch") {
         let newURL = ("https://www.youtube.com/results?search_query=" + (info.selectionText));
         chrome.tabs.create({ url: newURL });
     }
-    if (info.menuItemId == "iconid2") {
+    if (info.menuItemId == "buttonOpenYTMusic") {
         let scondurl = "hello";
         chrome.tabs.query({'active': true, lastFocusedWindow: true}, tabs => {
             scondurl = tabs[0].url;
@@ -38,7 +38,7 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
         );
 
     }
-    if (info.menuItemId == "iconid3") {
+    if (info.menuItemId == "buttonWikiSearch") {
         let newURL = ("https://en.wikipedia.org/w/index.php?search=" + (info.selectionText) + "&title=Special%3ASearch&ns0=1");
         chrome.tabs.create({ url: newURL });
     }
